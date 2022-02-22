@@ -1,14 +1,14 @@
-; Nama : GABRIEL CESAR HUTAGALUNG
-; NIM  : 11S21010
-; Nama file tipePoint.lsp
-
-;======================================
-; Definisi dan spesifikasi SELEKTOR:
-; Nama fungsi absis(P)
+; ---------------------------------------------------------------------------------------------
+; Nama      : GABRIEL CESAR HUTAGALUNG
+; NIM       : 11S21010
+; Nama file : tipePoint.lsp
+; ---------------------------------------------------------------------------------------------
+; DEFENISI DAN SPESIFIKASI SELEKTOR:
+; Nama fungsi                                                                      absis(P)
 ; absis:: point --> real
 ; absis(P) mengembalikan nilai absis dari titik P.
-
-; Nama fungsi ordinat(P)
+;
+; Nama fungsi                                                                     ordinat(P)
 ; ordinat:: point --> real
 ; ordinat(P) mengembalikan nilai ordinat dari titik P.
 ; Realisasi:
@@ -21,22 +21,46 @@
    (car (cdr P))
 )
 
-;======================================
-; Definisi dan spesifikasi KONSTRUKTOR:
-; Nama fungsi makePoint(x,y)
+; ---------------------------------------------------------------------------------------------
+; DEFENISI DAN SPESIFIKASI KONSTRUKTOR
+; 
+; Nama fungsi                                                                 makePoint(x,y)
 ; makePoint:: 2 real --> point
 ; makePoint(x,y) membentuk sebuah point P dari x dan y, dengan x adalah absis dan y ordinat.
+; ---------------------------------------------------------------------------------------------
 ; Realisasi:
 (defun makePoint(x y)
    (cons x (cons y nil))
 )
 
-;=====================================
-; Definisi dan spesifikasi PREDIKAT:
-
-; Nama fungsi isOrigin(P)
+; ---------------------------------------------------------------------------------------------
+; DEFENISI DAN SPESIFIKASI PREDIKAT
+;
+; Nama fungsi                                                                    isOrigin(P)
+;
 ; isOrigin:: point --> boolean
 ; isOrigin(P) mengembalikan nilai benar jika titik P adalah titik pusat (0,0).
+;
+; Nama Fungsi                                                                      isonsby(P)
+;
+; isonsby:: point --> boolean
+; isonsby(p) melakukan pengecekan apakah titik P berada pada sumbu Y.
+;
+; Nama Fungsi                                                                       isequal(p1 p2)
+;
+; isequal:: point --> boolean
+; isequal(p1 p2) melakukan pengecekan apakah titik P1 sama dengan titik P2
+;
+; Nama Fungsi                                                                     translasisby(p n)
+;
+; translasisby:: point --> point
+; mengembalikan sebuah titik hasil translasi titik P, searah sumbu Y, sejauh N
+;
+; Nama Fungsi                                                                     jarak (p1 p2)
+;
+; jarak:: point --> point
+; mengembalikan sebuah nilai real, merupakan jarak antara titik P1 dan P2
+; ---------------------------------------------------------------------------------------------
 ; Realisasi:
 
 (defun isOrigin (P)
@@ -57,6 +81,10 @@
 
 (defun translasisby(P N)
    (cons (absis p) (cons (+ (ordinat P) n) nil))
+)
+
+(defun jarak (p1 p2)
+   (cons (- (absis p1) (absis p2)) (cons (- (ordinat p1) (ordinat p2)) nil))
 )
 
 ;Nama Fungsi Kuadran
@@ -82,3 +110,15 @@
 		(t 'lainnya)
   )
 )
+
+; ---------------------------------------------------------------------------------------------
+; APLIKASI
+
+; --> (setq A (makePoint 0 3))
+;       (0 3)
+; --> (setq B (makePoint 3 3))
+;       (3 3)
+; --> (isonsby A)
+;       T
+; --> (isonsby B)
+;       NIL
