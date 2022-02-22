@@ -70,7 +70,7 @@
 )
 
 (defun isonsby(p)
-   (> (ordinat P) 0)
+   (= (absis P) 0)
 )
 
 (defun isequal(p1 p2)
@@ -84,17 +84,16 @@
 )
 
 (defun jarak (p1 p2)
-   (cons (- (absis p1) (absis p2)) (cons (- (ordinat p1) (ordinat p2)) nil))
+   (sqrt (+ (* (- (absis p1) (absis p2)) (- (absis p1) (absis p2))) (* (- (ordinat p1) (ordinat p2)) (- (ordinat p1) (ordinat p2)))))
 )
-
 ;Nama Fungsi Kuadran
 ;kuadran : point -->integer
 ;kuadran (P) mengembalikan lokasi kuadran dari titik P
 ;Realisasi:
-;			depend on	x > 0 and y > 0 : 1
-;						x < 0 and y > 0 : 2
-;						x < 0 and y < 0 : 3
-;						X > 0 and y < 0 : 4
+;			depend on   x > 0 and y > 0 : 1
+;						   x < 0 and y > 0 : 2
+;						   x < 0 and y < 0 : 3
+;						   X > 0 and y < 0 : 4
 ;Realisasi LISP
 ;(defun Kuadran (P)
 ;	(cond (and (> (absis P) 0) (> (ordinat P) 0)) 1
