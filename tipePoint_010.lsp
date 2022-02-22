@@ -92,9 +92,9 @@
 ;kuadran (P) mengembalikan lokasi kuadran dari titik P
 ;Realisasi:
 ;			depend on	x > 0 and y > 0 : 1
-;						   x < 0 and y > 0 : 2
-;						   x < 0 and y < 0 : 3
-;						   X > 0 and y < 0 : 4
+;						x < 0 and y > 0 : 2
+;						x < 0 and y < 0 : 3
+;						X > 0 and y < 0 : 4
 ;Realisasi LISP
 ;(defun Kuadran (P)
 ;	(cond (and (> (absis P) 0) (> (ordinat P) 0)) 1
