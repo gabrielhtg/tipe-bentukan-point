@@ -2,7 +2,7 @@
 
 Tonton Video ini untuk melihat cara membuatnya
 
-<button><a href="https://youtu.be/pbt_xdvSCDY">Klik Disini</a></button><br><br>
+<button><a href="https://youtu.be/qspyAXo_HWo">Klik Disini</a></button><br><br>
 Ini adalah program yang dibuat dari bahasa pemrograman LISP. Fitur-fitur dari program ini:
 - Menentukan absis
 - Menentukan ordinat
